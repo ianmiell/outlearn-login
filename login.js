@@ -17,7 +17,7 @@ casper.start('https://admin.outlearn.com/admin/login', function() {
 
 
 casper.thenOpen('https://admin.outlearn.com/admin/links?utf8=%E2%9C%93&q%5Bsuggested_tags_contains%5D=docker&q%5Bstate_eq%5D=pending_review&commit=Filter&order=id_desc', function() {
-    rows = links.concat(this.evaluate(getRows));
+    rows = concat(this.evaluate(getRows));
     this.echo(rows);
 });
 
