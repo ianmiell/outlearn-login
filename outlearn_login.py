@@ -101,7 +101,7 @@ def module():
 		'shutit.tk.outlearn_login.outlearn_login', 782914092.0001,
 		description='',
 		maintainer='',
-		delivery_methods=['docker'],
+		delivery_methods=['dockerfile'],
 		depends=['shutit.tk.setup']
 	)
 
