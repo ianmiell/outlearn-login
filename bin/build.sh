@@ -7,7 +7,7 @@ then
 	exit 1
 fi
 pushd ..
-$SHUTIT build -d docker "$@"
+docker build -t imiell/outlearn-login .
 if [[ $? != 0 ]]
 then
 	popd
