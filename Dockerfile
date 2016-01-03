@@ -7,8 +7,9 @@ RUN apt-get update
 RUN apt-get install -y -qq curl git python-pip
 RUN pip install shutit
 
+WORKDIR /opt
 RUN git clone https://github.com/ianmiell/outlearn-login
-RUN cd outlearn-login/bin
+WORKDIR /opt/outlearn-login
 RUN shutit build --delivery dockerfile
 
 ENTRYPOINT ["/run.sh"]                                                                                                                                                        
