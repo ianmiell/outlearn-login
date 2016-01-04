@@ -3,11 +3,6 @@ verbose: true,
 logLevel: 'debug'
 });
 
-function getRows() {
-    var links = document.querySelectorAll('tr');
-	return links
-}
-
 casper.start('https://admin.outlearn.com/admin/login', function() {
     this.fill('form[action="/admin/login"]', {
         'admin_user[email]':    'ian.miell@gmail.com',
@@ -17,8 +12,9 @@ casper.start('https://admin.outlearn.com/admin/login', function() {
 
 
 casper.thenOpen('https://admin.outlearn.com/admin/links?utf8=%E2%9C%93&q%5Bsuggested_tags_contains%5D=docker&q%5Bstate_eq%5D=pending_review&commit=Filter&order=id_desc', function() {
-    rows = this.evaluate(document.querySelectorAll('tr'));
-    this.echo(rows);
+    if (this.exists('td')) {
+        this.echo('td on page');
+    }
 });
 
 casper.run(function() {
