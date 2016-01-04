@@ -1,7 +1,8 @@
-var casper = require('casper').create({
-verbose: true,
-logLevel: 'debug'
-});
+//var casper = require('casper').create({
+//verbose: true,
+//logLevel: 'debug'
+//});
+var casper = require('casper').create()
 
 casper.start('https://admin.outlearn.com/admin/login', function() {
     this.fill('form[action="/admin/login"]', {
@@ -18,6 +19,6 @@ casper.thenOpen('https://admin.outlearn.com/admin/links?utf8=%E2%9C%93&q%5Bsugge
 });
 
 casper.run(function() {
-    this.echo('done').exit();
+    exit();
 });
 
