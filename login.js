@@ -19,6 +19,12 @@ casper.thenOpen('https://admin.outlearn.com/admin/links?utf8=%E2%9C%93&q%5Bsugge
 });
 
 casper.run(function() {
+    // avoid hideous error message
+    var _this = this;
+    _this.page.close();
+    setTimeout(function exit(){
+        _this.exit(exitStatus);
+    }, 0);
     this.exit();
 });
 
